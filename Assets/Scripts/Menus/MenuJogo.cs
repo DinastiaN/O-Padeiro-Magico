@@ -15,6 +15,8 @@ public class MenuJogo : MonoBehaviour
 
     public void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
+
         if (!DataPersistenceManager.instance.HasGameData())
         {
             ContinueButton.interactable = false;
