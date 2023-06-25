@@ -1,0 +1,301 @@
+fileFormatVersion: 2
+guid: 9b6f5b9cdcb677b4f8f795b3ad080779
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Agua
+    second: {fileID: 2100000, guid: f743b030f105f854c8bdc63557ebb00d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Arca
+    second: {fileID: 2100000, guid: bb908e67c05ff214086fffc4642efe4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Arca02
+    second: {fileID: 2100000, guid: fce9488f00e66964092c5d3286811333, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ArcaVidros
+    second: {fileID: 2100000, guid: 088fb0cab22c91c4499994bd4ea9c203, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ArmarioCozinha
+    second: {fileID: 2100000, guid: c7ea8bda13287d64fa4e7ca747b5549c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ArmarioCozinhaPegar
+    second: {fileID: 2100000, guid: 08c295a7578b91f42ae3b4263d25c699, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ArmarioCozinhaPorta
+    second: {fileID: 2100000, guid: f53b5bd8498e2414981bad0e49cdb02f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Banco
+    second: {fileID: 2100000, guid: dae3dd4915d5ad645a41502febe4ce5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cabo
+    second: {fileID: 2100000, guid: 754ac41abdec9af498abe06ac76d7ee1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CaboFaca
+    second: {fileID: 2100000, guid: 59c7877b932a67f48a63263c33d9a67b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ColherMadeira
+    second: {fileID: 2100000, guid: 33a4db80fb5dc9646a877053888df5e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CopoVidro
+    second: {fileID: 2100000, guid: 05cdfe00755fdaa40b49ccc4257303ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FacaGarfo
+    second: {fileID: 2100000, guid: 4529f08c335d90e4582d12ac5fb6aea4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Forno Lenha
+    second: {fileID: 2100000, guid: 3126e4eb93d3d2a41b1f0dddb98e7713, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Frigorifico
+    second: {fileID: 2100000, guid: 1ebc2afe037eb5445a35dea33e3c8fc6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Frigorifico02
+    second: {fileID: 2100000, guid: 1367e607904fac14689a2dd6d83adcb1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Frigorifico03
+    second: {fileID: 2100000, guid: 32d9206adc2862b48b1e2bb498bfc1ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LaminaFaca
+    second: {fileID: 2100000, guid: f6fa8b02b629fcc4bbace72e023aeb4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LaminaFaca2
+    second: {fileID: 2100000, guid: 793f1422371896e4bb301b8f21fc88fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "LavaLou\xE7a"
+    second: {fileID: 2100000, guid: f2e12debf3234b44c83bb18ed11a5b51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "LavaLou\xE7a02"
+    second: {fileID: 2100000, guid: 98e6c1e6155b4b644ae4bf4d39c0f770, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "LavaLou\xE7a03"
+    second: {fileID: 2100000, guid: b530119f7d8b71b45b8acf10452a9c3b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "LavaLou\xE7a04"
+    second: {fileID: 2100000, guid: df04ef84ad99aa946ab1c7697ff83686, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "LavaLou\xE7a05.001"
+    second: {fileID: 2100000, guid: d2cc188238330b34bb746a2616895aa9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lenha
+    second: {fileID: 2100000, guid: 3ea9374bdfe94be44926d28f26f39b15, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MesaCozinha
+    second: {fileID: 2100000, guid: ec39687a287d3f44f81e3e5833528b83, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MesaCozinhaArmario
+    second: {fileID: 2100000, guid: 51d08b35236cd01418012a055530bd0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Panela
+    second: {fileID: 2100000, guid: 65c92687020ad3a48bf4cc148d1b4498, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Panela01
+    second: {fileID: 2100000, guid: 67a92afc6975d6940a72fb92697f87b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Panela02
+    second: {fileID: 2100000, guid: d4a35afffce81f14a9536dac9b90a991, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PanelaBordas
+    second: {fileID: 2100000, guid: e8105e5f7cd072d4bb1fc5f7d1adde11, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pia
+    second: {fileID: 2100000, guid: 2bcab59a47e7d7e40809776f12a8c0f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PiaInterior
+    second: {fileID: 2100000, guid: 5b4ab91e92aeb824a97fb75ab4469cdd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PiaTorneira
+    second: {fileID: 2100000, guid: ecb0fb724531a7440949d61935aa46e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Porta Forno
+    second: {fileID: 2100000, guid: cf6b50cdefb1ebb4daadf00552f625cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Porta Forno02
+    second: {fileID: 2100000, guid: 9fb09ed90bf668142bc9fffa08df6411, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Prato
+    second: {fileID: 2100000, guid: e4811794afed0004399b4bf851c079ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TabuaCortar
+    second: {fileID: 2100000, guid: d3b9853d5edfbbf4e9e14fecab2157d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tubo
+    second: {fileID: 2100000, guid: 88df59f41988fbe488ad65ff4a8a35fe, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
