@@ -5,67 +5,62 @@ using UnityEngine;
 public class PlayerSpellSystem : MonoBehaviour
 {
     [SerializeField] private float maxMana = 100f;
-    [SerializeField] private float currentMana;
-    [SerializeField] private float manaRechargeRate = 2f;
-    [SerializeField] private float spellCooldown = 2f;
-    private float currentSpellCooldown = 0f;
-
+    [SerializeField] private float currentMana = 100f;
+    [SerializeField] private float rechargeRate = 10f;
+    [SerializeField] private float spellCooldown = 1f;
+    [SerializeField] private float spellCost = 20f;
     [SerializeField] private Transform castPoint;
+    [SerializeField] private GameObject spellObject; // Objeto lançado
 
-    private bool castingMagic = false;
-
-    private PlayerMovement playerMovement;
-
-    private void Awake()
-    {
-        playerMovement = GetComponent<PlayerMovement>();
-    }
+    private bool canCast = true;
 
     private void Update()
     {
-        bool isSpellCastHeldDown = Input.GetKey(KeyCode.E);
-        if (!castingMagic && isSpellCastHeldDown && currentSpellCooldown <= 0f)
-        {
-            CastingSpell();
-        }
-
-        if (currentSpellCooldown > 0f)
-        {
-            currentSpellCooldown -= Time.deltaTime;
-        }
-
         RechargeMana();
-    }
 
-    private void CastingSpell()
-    {
-        castingMagic = true;
-        StartCoroutine(CastSpell());
-
-        // Disable player movement during spell casting
-        playerMovement.DisableMovement();
-
-        // Set cooldown for spell casting
-        currentSpellCooldown = spellCooldown;
-    }
-
-    private IEnumerator CastSpell()
-    {
-        // Place your spell casting logic here
-        // For example:
-        Debug.Log("Casting Spell");
-        yield return new WaitForSeconds(2f); // Replace with your actual spell casting time
-
-        castingMagic = false;
-        playerMovement.EnableMovement();
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            CastSpell();
+        }
     }
 
     private void RechargeMana()
     {
         if (currentMana < maxMana)
         {
-            currentMana += manaRechargeRate * Time.deltaTime;
+            currentMana += rechargeRate * Time.deltaTime;
             currentMana = Mathf.Clamp(currentMana, 0f, maxMana);
         }
+    }
+
+    public void CastSpell()
+    {
+        if (canCast && currentMana >= spellCost)
+        {
+            StartCoroutine(SpellCooldown());
+            StartCoroutine(SpellEffect());
+
+            currentMana -= spellCost;
+        }
+    }
+
+    private IEnumerator SpellCooldown()
+    {
+        canCast = false;
+        yield return new WaitForSeconds(spellCooldown);
+        canCast = true;
+    }
+
+    private IEnumerator SpellEffect()
+    {
+        // Exemplo de código do efeito do feitiço
+        Debug.Log("Casting spell from " + castPoint.position);
+
+        // Instanciar o objeto lançado a partir do asset fornecido
+        GameObject spell = Instantiate(spellObject, castPoint.position, castPoint.rotation);
+
+        // Adicione aqui o código para configurar o comportamento do objeto lançado, como adicionar força, aplicar dano, etc.
+
+        yield return null;
     }
 }

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour, IDataPersistence
+public class PlayerMovement : MonoBehaviour
 {
-    // Variables
+    // Variáveis
     [SerializeField] private float moveSpeed;
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
@@ -24,60 +24,33 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 
     private CharacterController controller;
     private Animator anim;
+    private PlayerSpellSystem spellSystem;
 
     private void Start()
     {
         controller = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
-
-        LoadData(DataPersistenceManager.instance.GetGameData());
-    }
-
-    public PlayerMovement Enable()
-    {
-        enabled = true;
-        return this;
-    }
-
-    public PlayerMovement Disable()
-    {
-        enabled = false;
-        return this;
-    }
-
-    public void DisableMovement()
-    {
-        controller.enabled = false;
-    }
-
-    public void EnableMovement()
-    {
-        controller.enabled = true;
-    }
-
-    public void LoadData(GameData data)
-    {
-        if (data != null)
-        {
-            transform.position = data.playerPosition;
-        }
-    }
-
-    public void SaveData(ref GameData data)
-    {
-        data.playerPosition = transform.position;
+        spellSystem = GetComponent<PlayerSpellSystem>();
     }
 
     private void Update()
     {
-        if (!enabled)
-            return;
-
         Move();
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            Jump();
+            Attack();
+        }
+
+        if (!canJump)
+        {
+            jumpTimer += Time.deltaTime;
+
+            if (jumpTimer >= jumpCooldown)
+            {
+                canJump = true;
+                jumpTimer = 0f;
+            }
         }
     }
 
@@ -93,7 +66,7 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
         float moveZ = Input.GetAxis("Vertical");
         float moveX = Input.GetAxis("Horizontal");
 
-        moveDirection = new Vector3(moveX, 0f, moveZ);
+        moveDirection = new Vector3(moveX, moveDirection.y, moveZ);
         moveDirection = transform.TransformDirection(moveDirection);
 
         if (isGrounded)
@@ -112,6 +85,11 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
             }
 
             moveDirection *= moveSpeed;
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Jump();
+            }
         }
 
         controller.Move(moveDirection * Time.deltaTime);
@@ -143,15 +121,13 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
         {
             anim.SetBool("Jump", true);
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
-            canJump = false; // Disable jumping while on cooldown
-            StartCoroutine(ResetJump());
+            canJump = false;
         }
     }
 
-    private IEnumerator ResetJump()
+    public void Attack()
     {
-        yield return new WaitForSeconds(jumpCooldown);
-        canJump = true;
-        anim.SetBool("Jump", false);
+        anim.SetTrigger("Attack");
+        spellSystem.CastSpell();
     }
 }
