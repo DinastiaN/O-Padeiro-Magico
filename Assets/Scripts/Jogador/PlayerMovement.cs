@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour, IDataPersistence
 {
-    // Variaveis
+    // Variables
     [SerializeField] private float moveSpeed;
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
@@ -33,39 +33,51 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
         LoadData(DataPersistenceManager.instance.GetGameData());
     }
 
+    public PlayerMovement Enable()
+    {
+        enabled = true;
+        return this;
+    }
+
+    public PlayerMovement Disable()
+    {
+        enabled = false;
+        return this;
+    }
+
+    public void DisableMovement()
+    {
+        controller.enabled = false;
+    }
+
+    public void EnableMovement()
+    {
+        controller.enabled = true;
+    }
+
     public void LoadData(GameData data)
     {
         if (data != null)
         {
-            this.transform.position = data.playerPosition;
+            transform.position = data.playerPosition;
         }
     }
 
     public void SaveData(ref GameData data)
     {
-        data.playerPosition = this.transform.position;
+        data.playerPosition = transform.position;
     }
 
     private void Update()
     {
+        if (!enabled)
+            return;
+
         Move();
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Attack();
-        }
-
-        if (!canJump)
-        {
-
-            jumpTimer += Time.deltaTime;
-
-
-            if (jumpTimer >= jumpCooldown)
-            {
-                canJump = true;
-                jumpTimer = 0f;
-            }
+            Jump();
         }
     }
 
@@ -81,7 +93,7 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
         float moveZ = Input.GetAxis("Vertical");
         float moveX = Input.GetAxis("Horizontal");
 
-        moveDirection = new Vector3(moveX * moveSpeed, moveDirection.y, moveZ * moveSpeed);
+        moveDirection = new Vector3(moveX, 0f, moveZ);
         moveDirection = transform.TransformDirection(moveDirection);
 
         if (isGrounded)
@@ -100,11 +112,6 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
             }
 
             moveDirection *= moveSpeed;
-
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Jump();
-            }
         }
 
         controller.Move(moveDirection * Time.deltaTime);
@@ -136,16 +143,15 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
         {
             anim.SetBool("Jump", true);
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
-            canJump = false; // Desabilita o pulo enquanto estiver em cooldown
+            canJump = false; // Disable jumping while on cooldown
+            StartCoroutine(ResetJump());
         }
     }
 
-    private void Attack()
+    private IEnumerator ResetJump()
     {
-        anim.SetTrigger("Attack");
+        yield return new WaitForSeconds(jumpCooldown);
+        canJump = true;
+        anim.SetBool("Jump", false);
     }
 }
-
-
-
-
