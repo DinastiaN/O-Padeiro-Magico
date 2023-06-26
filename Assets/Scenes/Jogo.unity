@@ -157,7 +157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 49965045}
   - component: {fileID: 49965044}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cantina Escadas (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,6 +253,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 62e67c3da41657741afd89317d9a30a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 62e67c3da41657741afd89317d9a30a8, type: 3}
+      propertyPath: m_ReceiveShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 62e67c3da41657741afd89317d9a30a8, type: 3}
@@ -410,7 +414,7 @@ GameObject:
   m_Component:
   - component: {fileID: 154171982}
   - component: {fileID: 154171981}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cantina Escadas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,7 +483,7 @@ GameObject:
   m_Component:
   - component: {fileID: 296469191}
   - component: {fileID: 296469190}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Biblioteca Escadas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1794,7 +1798,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1028128829}
   - component: {fileID: 1028128828}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Salas Escadas (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2218,7 +2222,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220040630}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.87, y: 9.08, z: 6.27}
+  m_LocalPosition: {x: 2.71, y: 9.08, z: 8.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2235,7 +2239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1238977259}
   - component: {fileID: 1238977258}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Salas Escadas (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2414,7 +2418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1317365092}
   - component: {fileID: 1317365091}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Salas Escadas (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2792,7 +2796,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1353221819}
   - component: {fileID: 1353221818}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Salas Escadas (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2988,7 +2992,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1620881521}
   - component: {fileID: 1620881520}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Salas Escadas (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3182,7 +3186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1740324359}
   - component: {fileID: 1740324358}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Entrada
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3323,8 +3327,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  walkSpeed: 2
-  runSpeed: 3.5
+  walkSpeed: 4
+  runSpeed: 7
   isGrounded: 0
   groundCheckDistance: 0.5
   groundMask:
@@ -3404,6 +3408,9 @@ MonoBehaviour:
   spellCost: 20
   castPoint: {fileID: 1220040631}
   spellObject: {fileID: 8472988147051153776, guid: 9d0f5c92e69d70f41b6ab95595b4432e, type: 3}
+  spellSpeed: 20
+  spellDuration: 4
+  delay: 0.7
 --- !u!1001 &1881026221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3491,7 +3498,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1931484760}
   - component: {fileID: 1931484759}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Salas Escadas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

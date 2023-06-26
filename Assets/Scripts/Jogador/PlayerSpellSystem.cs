@@ -10,7 +10,10 @@ public class PlayerSpellSystem : MonoBehaviour
     [SerializeField] private float spellCooldown = 1f;
     [SerializeField] private float spellCost = 20f;
     [SerializeField] private Transform castPoint;
-    [SerializeField] private GameObject spellObject; // Objeto lançado
+    [SerializeField] private GameObject spellObject;
+    [SerializeField] private float spellSpeed = 10f; 
+    [SerializeField] private float spellDuration = 5f;  
+    [SerializeField] private float delay = 1f;
 
     private bool canCast = true;
 
@@ -53,14 +56,30 @@ public class PlayerSpellSystem : MonoBehaviour
 
     private IEnumerator SpellEffect()
     {
-        // Exemplo de código do efeito do feitiço
         Debug.Log("Casting spell from " + castPoint.position);
 
-        // Instanciar o objeto lançado a partir do asset fornecido
+        yield return new WaitForSeconds(delay);
+
         GameObject spell = Instantiate(spellObject, castPoint.position, castPoint.rotation);
 
-        // Adicione aqui o código para configurar o comportamento do objeto lançado, como adicionar força, aplicar dano, etc.
+        Rigidbody rb = spell.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.AddForce(spell.transform.forward * spellSpeed, ForceMode.Impulse);
+        }
 
-        yield return null;
+        yield return new WaitForSeconds(spellDuration);
+
+        Destroy(spell);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
 }

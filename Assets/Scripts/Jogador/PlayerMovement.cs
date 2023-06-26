@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IDataPersistence
 {
     // Variáveis
     [SerializeField] private float moveSpeed;
@@ -31,6 +31,20 @@ public class PlayerMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
         spellSystem = GetComponent<PlayerSpellSystem>();
+        LoadData(DataPersistenceManager.instance.GetGameData());
+    }
+
+    public void LoadData(GameData data)
+    {
+        if (data != null)
+        {
+            this.transform.position = data.playerPosition;
+        }
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.playerPosition = this.transform.position;
     }
 
     private void Update()
